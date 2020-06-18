@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "dist", // tsc编译的文件路径
+        "module": "esnext", // 输出w文件格式类型
+        "target": "es5", // 指定编译版本
+        "declaration": true,
+        "jsx": "react",
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["src"],
+    "exclude": ["src/**/*.test.tsx"]
+}

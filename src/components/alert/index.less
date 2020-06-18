@@ -1,0 +1,66 @@
+@import '../../styles/_variables.less';
+@alert-prefix-cls: ~"@{css-prefix}alert";
+
+.@{alert-prefix-cls} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 72 / @rem;
+    padding: 0 48 / @rem;
+    background-color: #fff6e5;
+    box-sizing: border-box;
+    color: #ffa400;
+    overflow: hidden;
+
+    &-message {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 600 / @rem;
+        font-weight: bold;
+        font-size: @font-size-small;
+    }
+
+    &-icon,
+    &-link {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &-link-text {
+        display: inline-block;
+        font-size: 24/@rem;
+        font-weight: bold;
+        color: #FFA400;
+        line-height: 1;
+    }
+
+    &-btn {
+        font-size: 20/@rem;
+        line-height: 1;
+        color: #fff;
+        padding: 10/@rem 16/@rem;
+        background-color: #FFB429;
+        border-radius: 40/@rem;
+    }
+
+    &-circle {
+        border-radius: @border-radius-semicircle;
+        padding: 0 32 / @rem;
+    }
+
+    &-exit {
+        height: 72 / @rem;
+    }
+
+    &-exit-active {
+        height: 0;
+        transition: height 100ms;
+    }
+}
