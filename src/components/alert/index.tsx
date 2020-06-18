@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Icon from '../icon';
+import '@testing-library/jest-dom/extend-expect';
 
 const prefixCls = 'nami-alert';
 

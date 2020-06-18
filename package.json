@@ -1,25 +1,34 @@
 {
   "name": "nami-ui-react",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "component library for react",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "delete": "rimraf ./node_modules",
-    "lint": "eslint src --fix --ext .ts,.tsx ",
+    "lint": "eslint src --ext .ts,.tsx --max-warnings 5",
     "clear": "rimraf ./dist",
+    "jest": "npx jest --bail",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "lessc ./src/styles/index.less ./dist/index.css",
-    "build": "npm run clear && npm run build-ts && npm run build-css"
+    "build": "npm run clear && npm run build-ts && npm run build-css",
+    "prepublishOnly": "npm run jest && npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1597403461/nami-ui-react.git"
   },
-  "keywords": [],
+  "keywords": [
+    "Component",
+    "UI",
+    "React"
+  ],
   "author": "kaixuan.fang",
-  "license": "ISC",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/1597403461/nami-ui-react/issues"
   },
@@ -28,9 +37,13 @@
     "classnames": "^2.2.6",
     "react-transition-group": "^4.4.1"
   },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run jest && npm run lint"
     }
   },
   "devDependencies": {
@@ -55,6 +68,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
     "less": "^3.11.3",
     "prettier": "^2.0.5",
