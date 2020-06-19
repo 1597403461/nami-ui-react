@@ -4,5 +4,6 @@ npm-debug.log
 package-lock.json
 .DS_Store
 .jshintrc
+dist/
 .vscode/
 *.css

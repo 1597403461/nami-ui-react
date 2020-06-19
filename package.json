@@ -9,11 +9,11 @@
     "delete": "rimraf ./node_modules",
     "lint": "eslint src --ext .ts,.tsx --max-warnings 5",
     "clear": "rimraf ./dist",
-    "jest": "npx jest --bail",
+    "jest": "npx jest",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "lessc ./src/styles/index.less ./dist/index.css",
     "build": "npm run clear && npm run build-ts && npm run build-css",
-    "prepublishOnly": "npm run jest && npm run lint && npm run build"
+    "prepublishOnly": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run jest && npm run lint"
+      "pre-commit": "npm run lint"
     }
   },
   "devDependencies": {
