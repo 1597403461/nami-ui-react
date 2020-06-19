@@ -15,5 +15,3 @@
 4. 若不是执行`config set registry http://registry.npmjs.org`将镜像改为npm
 5. 执行`npm adduser`登陆账号
 6. 执行`npm whoami`查看是否登陆成功
-
-## `package`配置

@@ -3,8 +3,8 @@ import classNames from 'classnames';
 
 const prefixCls = 'nami-btn';
 
-export type ButtonSize = 'primary' | 'middle' | 'small';
-export type ButtonType = 'ghost' | 'light';
+export type ButtonSize = 'middle' | 'small';
+export type ButtonType = 'ghost' | 'light' | 'primary';
 
 interface BaseButtonProps {
     block?: boolean;
@@ -72,5 +72,6 @@ Button.defaultProps = {
 export default Button;
 
 /**
- * 与原文差异是type值和btnType和size
+ * 原意的type是此时的btnType
+ * 原意的htmlType是此时的默认属性type
  */
