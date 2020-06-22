@@ -10,7 +10,7 @@ const defaultProps = {
 const testProps: ButtonProps = {
     block: true,
     btnType: 'light',
-    size: 'primary',
+    size: 'small',
     className: 'classsss'
 };
 
@@ -46,7 +46,7 @@ describe('test button component', () => {
         const element = wrapper.getByText('Nice');
         const buttonElement = element.parentElement;
         expect(buttonElement).toHaveClass(
-            'nami-btn nami-btn-primary nami-btn-light classsss nami-btn-block'
+            'nami-btn nami-btn-small nami-btn-light classsss nami-btn-block'
         );
     });
     it('should render the disabled button when disabled set to true', () => {

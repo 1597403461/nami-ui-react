@@ -1,13 +1,12 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Icon from '../icon';
-import '@testing-library/jest-dom/extend-expect';
 
 const prefixCls = 'nami-alert';
 
 export type btnType = 'closeable' | 'link' | 'button' | 'default';
-interface alterProps {
+export interface alterProps {
     message?: string;
     className?: string;
     shape?: string;
@@ -15,15 +14,36 @@ interface alterProps {
     type?: btnType;
     buttonText?: string;
     linkText?: string;
+    onClose?: () => void;
+    onClick?: () => void;
 }
 
 const Alert: FC<alterProps> = props => {
-    const { message, className, shape, visible, type = 'default', buttonText, linkText } = props;
+    const [visible, setVisible] = useState(true);
+    const {
+        message,
+        className,
+        shape,
+        type = 'default',
+        buttonText,
+        linkText,
+        onClose,
+        onClick
+    } = props;
+
+    const handleClose = (): void => {
+        setVisible(false);
+        onClose && onClose();
+    };
+
+    const handleClick = (): void => {
+        onClick && onClick();
+    };
 
     const renderType = () => {
         const types = {
             closeable: (
-                <span className={`${prefixCls}-icon`}>
+                <span className={`${prefixCls}-icon`} onClick={handleClose}>
                     <Icon type='&#xe69b;' />
                 </span>
             ),
@@ -48,8 +68,10 @@ const Alert: FC<alterProps> = props => {
             className
         );
         return (
-            <div className={alertCls}>
-                <p className={`${prefixCls}-message`}>{message}</p>
+            <div className={alertCls} onClick={handleClick}>
+                <p className={`${prefixCls}-message`} data-testid='alert'>
+                    {message}
+                </p>
                 {renderType()}
             </div>
         );
@@ -62,7 +84,7 @@ const Alert: FC<alterProps> = props => {
 };
 
 Alert.defaultProps = {
-    visible: true,
+    type: 'default',
     message: '',
     buttonText: '去开启'
 };
