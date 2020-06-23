@@ -61,7 +61,7 @@ const SlideleftPanel: FC<slideleftPanelProps> = props => {
     );
 
     return ReactDOM.createPortal(renderSlideUpPanel(), node);
-}
+};
 
 SlideleftPanel.defaultProps = {
     visible: false,
