@@ -1,6 +1,6 @@
 {
   "name": "nami-ui-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "component library for react",
   "main": "dist/index.js",
   "module": "dist/index.js",
