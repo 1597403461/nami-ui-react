@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, FC, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
-import BodyScroll from '../../utils/body-scroll';
+import BodyScroll from '@bairong/body-scroll';
 
 const prefixCls = 'nami-slide-left-panel';
 
