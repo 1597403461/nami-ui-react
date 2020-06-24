@@ -22,3 +22,17 @@ const App = () => (
 ```js
 import 'nami-ui-react/dist/index.css';
 ```
+
+## 本地开发命令
+
+启动本地环境 `npm run stroybook`
+
+全局单元测试 `npm run jest`
+
+启动局部单元测试并监控 `npx jest ./src/components/**/index.test.tsx --watch`
+
+例如：`npx jest ./src/components/button/index.test.tsx --watch`
+
+build静态文件`npm run build`
+
+发布到npm`npm publish`

@@ -19,3 +19,7 @@
 ## 1.0.6
 
 第三方包无d.ts声明文件，不影响使用
+
+## 1.0.7
+
+添加 story book，并为button编写story book
