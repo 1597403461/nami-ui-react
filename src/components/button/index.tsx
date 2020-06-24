@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, FC, ReactNode, MouseEvent } from 'react';
 import classNames from 'classnames';
 
 const prefixCls = 'nami-btn';
@@ -7,19 +7,25 @@ export type ButtonSize = 'middle' | 'small';
 export type ButtonType = 'ghost' | 'light' | 'primary';
 
 interface BaseButtonProps {
+    /** 控制宽度100% */
     block?: boolean;
+    /** 禁用 */
     disabled?: boolean;
+    /** 加载中 */
     loading?: boolean;
+    /** 加载中的文本 */
     loadingText?: string;
+    /**button类型 */
     btnType?: ButtonType;
+    /** button大小 */
     size?: ButtonSize;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>; // 定义button属性
 export type ButtonProps = Partial<NativeButtonProps>; // Partial全局设成可选属性
 
-const Button: React.FC<ButtonProps> = props => {
+export const Button: FC<ButtonProps> = props => {
     const {
         btnType,
         size,
@@ -33,7 +39,7 @@ const Button: React.FC<ButtonProps> = props => {
         ...otherProps
     } = props;
 
-    const handeClick = (event: React.MouseEvent<HTMLElement, MouseEvent>): any => {
+    const handeClick = (event: MouseEvent<HTMLElement, globalThis.MouseEvent>): any => {
         !loading && onClick && onClick(event);
     };
 

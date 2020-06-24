@@ -21,3 +21,30 @@
 `npm i @babel/plugin-transform-runtime -D`
 
 在.babelrc配置文件中配置`"plugins": ["@babel/plugin-transform-runtime"]`
+
+## 配置storyBook
+
+初始化`npx -p @storybook/cli sb init`
+
+配置main.js使其支持ts
+需要安装`babel-loader`和`babel-preset-react-app`（具体看官网）
+
+```js
+module.exports = {
+    stories: ['../stories/**/*.stories.tsx', '../src/components/**/*.stories.tsx'],
+    addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+    webpackFinal: async config => {
+        config.module.rules.push(
+            {
+                test: /\.(ts|tsx)$/,
+                loader: require.resolve('babel-loader'),
+                options: {
+                    presets: [['react-app', { flow: false, typescript: true }]],
+                },
+            }
+        );
+        config.resolve.extensions.push('.ts', '.tsx');
+        return config;
+    },
+};
+```
