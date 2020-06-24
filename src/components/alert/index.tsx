@@ -7,18 +7,26 @@ const prefixCls = 'nami-alert';
 
 export type btnType = 'closeable' | 'link' | 'button' | 'default';
 export interface alterProps {
+    /** alert文案 */
     message?: string;
     className?: string;
+    /** alert形状 circle */
     shape?: string;
+    /** 动画效果 */
     visible?: boolean;
+    /** icon类型 */
     type?: btnType;
+    /** type为button时的按钮文案 */
     buttonText?: string;
+    /** type为link时icon旁的文案 */
     linkText?: string;
+    /** type为closeable时icon的点击 */
     onClose?: () => void;
+    /** alert的点击 */
     onClick?: () => void;
 }
 
-const Alert: FC<alterProps> = props => {
+export const Alert: FC<alterProps> = props => {
     const [visible, setVisible] = useState(true);
     const {
         message,
@@ -44,7 +52,7 @@ const Alert: FC<alterProps> = props => {
         const types = {
             closeable: (
                 <span className={`${prefixCls}-icon`} onClick={handleClose}>
-                    <Icon type='&#xe69b;' />
+                    <Icon type='&#xe69a;' />
                 </span>
             ),
             link: (

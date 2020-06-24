@@ -1,31 +1,13 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { CSSProperties, useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import Button from './index';
-import './index.css';
-
-const style: CSSProperties = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-};
-
-const typeStyle: CSSProperties = {
-    width: '30%'
-};
-
-const sizeStyle: CSSProperties = {
-    width: '20%'
-};
-
-const disableStyle: CSSProperties = {
-    width: '45%'
-};
+import './index.less';
 
 const buttonWithBtnType = () => (
-    <div style={{ ...style, ...typeStyle }}>
+    <Fragment>
         <Button btnType='primary' onClick={action('primary btn click')}>
             primary button
         </Button>
@@ -35,22 +17,22 @@ const buttonWithBtnType = () => (
         <Button btnType='light' onClick={action('light btn click')}>
             light button
         </Button>
-    </div>
+    </Fragment>
 );
 
 const buttonWithSize = () => (
-    <div style={{ ...style, ...sizeStyle }}>
+    <Fragment>
         <Button size='middle' btnType='primary' onClick={action(' middle btn click')}>
             middle button
         </Button>
         <Button btnType='primary' size='small' onClick={action('small btn click')}>
             small button
         </Button>
-    </div>
+    </Fragment>
 );
 
 const buttonWithDisbled = () => (
-    <div style={{ ...style, ...disableStyle }}>
+    <Fragment>
         <Button disabled btnType='primary' onClick={action('disabled btn click')}>
             primary disabled button
         </Button>
@@ -60,15 +42,14 @@ const buttonWithDisbled = () => (
         <Button disabled btnType='light' onClick={action('disabled btn click')}>
             light disabled button
         </Button>
-    </div>
+    </Fragment>
 );
 
 const buttonWithLoading = () => {
     const [loading, setloading] = useState(false);
     return (
-        <div style={{ ...style, ...sizeStyle }}>
+        <Fragment>
             <Button
-                block
                 loading={loading}
                 btnType='primary'
                 onClick={() => {
@@ -77,14 +58,12 @@ const buttonWithLoading = () => {
             >
                 please click me
             </Button>
-        </div>
+        </Fragment>
     );
 };
 
 const buttonWithBlock = () => (
-    <div style={{ ...style, ...sizeStyle }}>
-        <Button block loading btnType='primary' onClick={action('btn click')} />
-    </div>
+    <Button block loading btnType='primary' onClick={action('btn click')} />
 );
 
 storiesOf('Button Component', module)

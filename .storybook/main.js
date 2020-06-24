@@ -1,6 +1,6 @@
 module.exports = {
-    stories: ['../stories/**/*.stories.tsx', '../src/components/**/*.stories.tsx'],
-    addons: ['@storybook/addon-actions', '@storybook/addon-links', '@storybook/addon-info"'],
+    stories: ['../stories/*.stories.tsx', '../src/components/**/*.stories.tsx'],
+    addons: ['@storybook/addon-actions', '@storybook/addon-links'],
     webpackFinal: async config => {
         config.module.rules.push(
             {
@@ -25,7 +25,15 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    { loader: 'css-loader' },
+                    { loader: 'less-loader' }
+                ]
+            },
         );
         config.resolve.extensions.push('.ts', '.tsx');
         return config;
