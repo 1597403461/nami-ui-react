@@ -1,9 +1,8 @@
 import React, { CSSProperties } from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, actions } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 
 import Alert from './index';
-import './index.less';
 
 const style: CSSProperties = {
     width: '100%'
