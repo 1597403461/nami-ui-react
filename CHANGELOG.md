@@ -27,3 +27,7 @@
 ## 1.0.8
 
 配置less信息，并为alert编写story book
+
+## 1.0.9
+
+添加toast组件
