@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Icon, { iconProps } from './index';
+import Icon, { IconProps } from './index';
 import '@testing-library/jest-dom/extend-expect';
 
-const testProps: iconProps = {
+const testProps: IconProps = {
     className: 'iconclass',
     type: '&#xe69a;'
 };

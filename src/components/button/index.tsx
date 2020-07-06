@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode, MouseEvent } from 'react';
+import React, { ButtonHTMLAttributes, FC, MouseEvent } from 'react';
 import classNames from 'classnames';
 
 const prefixCls = 'nami-btn';
@@ -19,7 +19,6 @@ interface BaseButtonProps {
     btnType?: ButtonType;
     /** button大小 */
     size?: ButtonSize;
-    children: ReactNode;
 }
 
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>; // 定义button属性

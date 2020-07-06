@@ -20,17 +20,20 @@ addParameters({
         inline: true,
         header: false,
         source: false,
+        propTablesExclude: [Button],
         text: `
             ~~~js
             // 使用方法
-            const onClick = () => {
-                Toast('hello world');
+            const App = () => {
+                const onClick = () => {
+                    Toast('hello world');
+                };
+                return (
+                    <Button btnType='primary' onClick={onClick}>
+                        please click me
+                    </Button>
+                );
             };
-            return (
-                <Button btnType='primary' onClick={onClick}>
-                    please click me
-                </Button>
-            );
             ~~~
         `
     }

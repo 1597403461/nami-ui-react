@@ -31,3 +31,7 @@
 ## 1.0.9
 
 添加toast组件
+
+## 1.0.10
+
+添加modal-wrapper组件、modal组件、优化代码

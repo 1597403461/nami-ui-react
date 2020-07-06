@@ -1,0 +1,66 @@
+@import '../../styles/_variables.less';
+
+@modal-prefix-cls: ~"@{css-prefix}modal";
+
+.@{modal-prefix-cls} {
+    background-color: #fff;
+    border-radius: 32 / @rem;
+    position: relative;
+    margin: 0 auto;
+    width: 608 / @rem;
+    box-sizing: border-box;
+
+    &-header {
+        padding: 72 / @rem 64 / @rem 16 / @rem;
+    }
+
+    &-title {
+        text-align: center;
+        font-size: 36 / @rem;
+        line-height: 52 / @rem;
+        color: #2d2d2d;
+        font-weight: bold;
+    }
+
+    &-body {
+        padding: 0 64 / @rem;
+        font-size: 28 / @rem;
+        color: #727272;
+        font-size: 28 / @rem;
+        line-height: 44 / @rem;
+        text-align: center;
+    }
+
+    &-footer {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        padding: 56 / @rem 64 / @rem 80 / @rem;
+        button {
+            width: 224 / @rem;
+        }
+    }
+
+    &-footer-center {
+        -webkit-justify-content: ccenter;
+        justify-content: center;
+    }
+
+    &-close-btn {
+        position: absolute;
+        left: 50%;
+        bottom: -98/@rem;
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%);
+        font-size: 68/@rem;
+        line-height: 1;
+        color: #E1E1E1;
+    }
+
+    &-without-footer {
+        .@{modal-prefix-cls}-body {
+            padding-bottom: 0;
+        }
+    }
+}
