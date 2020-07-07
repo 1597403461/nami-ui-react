@@ -35,3 +35,7 @@
 ## 1.0.10
 
 添加modal-wrapper组件、modal组件、优化代码
+
+## 1.0.11
+
+添加Agreement组件、Empty组件、CheckBox组件

@@ -1,4 +1,4 @@
-import React, { FC, DOMAttributes } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 
 const prefixCls = 'nami-icon';
@@ -8,7 +8,7 @@ export interface baseIconProps {
     type: string;
 }
 
-export type IconProps = baseIconProps & DOMAttributes<HTMLElement>;
+export type IconProps = baseIconProps & HTMLAttributes<HTMLElement>;
 
 const Icon: FC<IconProps> = ({ className, type, ...otherProps }) => {
     const iconCls = classNames(prefixCls, className);

@@ -10,7 +10,7 @@ const baseModal = () => {
         onOk: 'click ok button',
         onCancel: 'click cancel button'
     });
-    const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState<boolean>(false);
     return (
         <Fragment>
             <Button
@@ -36,8 +36,8 @@ const baseModal = () => {
 };
 
 const loadingModal = () => {
-    const [visible, setVisible] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [visible, setVisible] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
     return (
         <Fragment>
             <Button

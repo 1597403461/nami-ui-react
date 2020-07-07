@@ -1,0 +1,26 @@
+@import '../../styles/_variables.less';
+
+@agreement-prefix-cls: ~"@{css-prefix}agreement";
+
+.@{agreement-prefix-cls} {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    &-item {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+
+        span {
+            display: block;
+            color: @primary-color;
+            font-size: 24 / @rem;
+            line-height: 1;
+        }
+    }
+}

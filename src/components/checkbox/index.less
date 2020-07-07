@@ -1,0 +1,43 @@
+@import '../../styles/_variables.less';
+
+@checkbox-prefix-cls: ~"@{css-prefix}checkbox";
+
+.@{checkbox-prefix-cls} {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &-disabled {
+
+        .@{checkbox-prefix-cls}-icon {
+            color: #c6c6c6;
+        }
+    }
+
+    &-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+    }
+    .@{checkbox-prefix-cls} {
+        &-icon {
+            font-size: 48/@rem;
+            color: #727272;
+        }
+        &-icon-checked {
+            color: @primary-color;
+        }
+    }
+
+    &-text {
+        margin-left: 12/@rem;
+        font-size: 24/@rem;
+        line-height: 1;
+        color: #727272;
+    }
+}
