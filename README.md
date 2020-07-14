@@ -35,4 +35,4 @@ import 'nami-ui-react/dist/index.css';
 
 build静态文件`npm run build`
 
-发布到npm`npm publish`
+发布到npm官网`npm publish`

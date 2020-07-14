@@ -16,11 +16,16 @@
 5. 执行`npm adduser`登陆账号
 6. 执行`npm whoami`查看是否登陆成功
 
-## 使用async必须安装插件`@babel/plugin-transform-runtime`
+## 安装配置ts
 
-`npm i @babel/plugin-transform-runtime -D`
+`npm install --save-dev typescript awesome-typescript-loader source-map-loader`
+这些依赖会让TypeScript和webpack在一起良好地工作。 awesome-typescript-loader可以让Webpack使用TypeScript的标准配置文件 tsconfig.json编译TypeScript代码。 source-map-loader使用TypeScript输出的sourcemap文件来告诉webpack何时生成 自己的sourcemaps。 这就允许你在调试最终生成的文件时就好像在调试TypeScript源码一样。
 
-在.babelrc配置文件中配置`"plugins": ["@babel/plugin-transform-runtime"]`
+在react中使用ts要安装预设`@babel/preset-typescript`
+
+## 安装jest测试
+
+`npm i jest @types/jest @testing-library/jest-dom @testing-library/react @testing-library/user-event -D`
 
 ## 配置storyBook
 
