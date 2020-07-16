@@ -1,0 +1,83 @@
+@import '../../styles/_variables.less';
+
+@bubble-prefix-cls: ~"@{css-prefix}bubble";
+
+.@{bubble-prefix-cls} {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 56 / @rem;
+    padding: 0 24 / @rem;
+    position: absolute;
+    z-index: 1;
+    background-color: #2d2d2d;
+    border-radius: @border-radius-semicircle;
+    -webkit-animation: bubble 1.5s linear infinite;
+    animation: bubble 1.5s linear infinite;
+
+    span {
+        position: relative;
+        z-index: 2;
+        font-size: @font-size-small;
+        font-family: bold;
+        line-height: 1;
+        color: #ffffff;
+    }
+
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-color: transparent #2d2d2d transparent #2d2d2d;
+        position: absolute;
+        z-index: 1;
+        border: 10 / @rem solid #2d2d2d;
+        border-top-left-radius: 4 / @rem;
+        border-bottom-right-radius: 4 / @rem;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    &-up {
+        &::after {
+            left: 50 / @rem;
+            top: -9 / @rem;
+        }
+    }
+
+    &-down {
+        &::after {
+            bottom: -8 / @rem;
+            right: 30 / @rem;
+        }
+    }
+}
+
+@-webkit-keyframes bubble {
+    0% {
+        transform: translateY(0 / @rem);
+    }
+
+    50% {
+        transform: translateY(10 / @rem);
+    }
+
+    100% {
+        transform: translateY(0 / @rem);
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0 / @rem);
+    }
+
+    50% {
+        transform: translateY(10 / @rem);
+    }
+
+    100% {
+        transform: translateY(0 / @rem);
+    }
+}

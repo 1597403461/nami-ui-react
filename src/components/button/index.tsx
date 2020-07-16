@@ -20,7 +20,6 @@ interface BaseButtonProps {
     /** button大小 */
     size?: ButtonSize;
 }
-
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>; // 定义button属性
 export type ButtonProps = Partial<NativeButtonProps>; // Partial全局设成可选属性
 

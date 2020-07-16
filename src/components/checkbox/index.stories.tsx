@@ -16,4 +16,4 @@ const checkbox = () => {
     );
 };
 
-storiesOf('checkbox component', module).add('checkbox 展示', checkbox);
+storiesOf('checkbox', module).add('checkbox 展示', checkbox);

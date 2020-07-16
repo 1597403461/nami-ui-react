@@ -10,4 +10,4 @@ const empty = () => (
     />
 );
 
-storiesOf('empty component', module).add('empty 展示', empty);
+storiesOf('empty', module).add('empty 组件', empty);

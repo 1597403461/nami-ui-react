@@ -65,7 +65,7 @@ const buttonWithBlock = () => (
     <Button block loading btnType='primary' onClick={action('btn click')} />
 );
 
-storiesOf('Button Component', module)
+storiesOf('Button', module)
     .add('不同类型的 Button', buttonWithBtnType)
     .add('不同尺寸的 Button', buttonWithSize)
     .add('禁用的 Button', buttonWithDisbled)

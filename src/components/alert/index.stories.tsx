@@ -35,4 +35,4 @@ const alert = () => (
     </div>
 );
 
-storiesOf('Alert component', module).add('不同样式的 Alert', alert);
+storiesOf('Alert', module).add('不同样式的 Alert', alert);

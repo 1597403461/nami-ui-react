@@ -19,4 +19,4 @@ const agreement = () => {
     );
 };
 
-storiesOf('Agreement Component', module).add('Agreement', agreement);
+storiesOf('Agreement', module).add('协议展示', agreement);

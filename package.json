@@ -37,6 +37,7 @@
   "homepage": "https://github.com/1597403461/nami-ui-react#readme",
   "dependencies": {
     "@bairong/body-scroll": "^1.0.6",
+    "@bairong/rs-native-api": "^0.0.52",
     "classnames": "^2.2.6",
     "react-transition-group": "^4.4.1"
   },

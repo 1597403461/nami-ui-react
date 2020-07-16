@@ -38,4 +38,4 @@ addParameters({
         `
     }
 });
-storiesOf('Toast component', module).add('Toast 提示', toast);
+storiesOf('Toast', module).add('Toast 提示', toast);

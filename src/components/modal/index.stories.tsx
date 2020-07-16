@@ -79,6 +79,4 @@ addParameters({
     }
 });
 
-storiesOf('Modal Component', module)
-    .add('基础 modal', baseModal)
-    .add('loading modal', loadingModal);
+storiesOf('Modal', module).add('基础 modal', baseModal).add('loading modal', loadingModal);
