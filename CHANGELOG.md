@@ -39,3 +39,7 @@
 ## 1.0.11
 
 添加Agreement组件、Empty组件、CheckBox组件
+
+## 1.0.14
+
+test CI
