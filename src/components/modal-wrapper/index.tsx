@@ -7,7 +7,7 @@ import classNames from 'classnames';
 const prefixCls = 'nami-modal-wrapper';
 
 const node = document.createElement('div');
-document.body.appendChild(node);
+
 export interface ModalWrappperlProps {
     /** 是否展示 */
     visible?: boolean;
@@ -21,13 +21,13 @@ export interface ModalWrappperlProps {
 export const ModalWrapper: FC<ModalWrappperlProps> = props => {
     const { visible, className, children, onClose, maskClosable } = props;
 
-    useEffect(
-        () => () => {
+    useEffect(() => {
+        document.body.appendChild(node);
+        return () => {
             BodyScroll['abled']();
             document.body.removeChild(node);
-        },
-        []
-    );
+        };
+    }, []);
 
     useEffect(() => {
         BodyScroll[visible ? 'disabled' : 'abled']();
@@ -38,7 +38,9 @@ export const ModalWrapper: FC<ModalWrappperlProps> = props => {
     };
     const renderContent = () => <div className={`${prefixCls}-content`}></div>;
 
-    const renderMask = () => <div className={`${prefixCls}-mask`} onClick={handleMaskClick} />;
+    const renderMask = () => (
+        <div className={`${prefixCls}-mask`} onClick={handleMaskClick} data-testid='mask' />
+    );
 
     const renderModalWrapper = () => {
         const modalWrapperCls = classNames(prefixCls, className);

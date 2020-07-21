@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, Fragment } from 'react';
-import { storiesOf, addParameters } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import { actions, action } from '@storybook/addon-actions';
 
 import Modal from './index';
@@ -68,15 +68,10 @@ const loadingModal = () => {
         </Fragment>
     );
 };
+const params = {
+    info: { inline: true, header: false, source: true, propTablesExclude: [Button] }
+};
 
-addParameters({
-    info: {
-        inline: true,
-        header: false,
-        source: true,
-        propTablesExclude: [Button],
-        text: '<h3>注意：此组件若点击无效，请刷新页面</h3>'
-    }
-});
-
-storiesOf('Modal', module).add('基础 modal', baseModal).add('loading modal', loadingModal);
+storiesOf('Modal', module)
+    .add('基础 modal', baseModal, params)
+    .add('loading modal', loadingModal, params);

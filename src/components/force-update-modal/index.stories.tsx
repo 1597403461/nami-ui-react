@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf, addParameters } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 
 const update = () => <div />;
 
-addParameters({
+storiesOf('update-modal', module).add('升级组件', update, {
     info: {
         inline: true,
         header: false,
@@ -12,5 +12,3 @@ addParameters({
         `
     }
 });
-
-storiesOf('update-modal', module).add('升级组件', update);

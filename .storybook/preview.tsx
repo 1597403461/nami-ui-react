@@ -9,7 +9,7 @@ const wrapperStyle: CSSProperties = {
 
 const storyWrapper = (stroyFn: any) => (
     <div style={wrapperStyle}>
-        <h3 style={{paddingBottom:'20px'}}>组件演示</h3>
+        <h3 style={{paddingBottom:'20px', fontSize:'40px'}}>组件演示</h3>
         {stroyFn()}
     </div>
 )

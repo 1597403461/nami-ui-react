@@ -39,3 +39,7 @@
 ## 1.0.11
 
 添加Agreement组件、Empty组件、CheckBox组件
+
+## 1.0.15
+
+补充所有组件的单元测试、并添加captcha-modal组件

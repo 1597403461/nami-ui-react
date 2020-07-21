@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, addParameters } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 
 import Toast from './index';
 
@@ -15,7 +15,8 @@ const toast = () => {
         </Button>
     );
 };
-addParameters({
+
+const params = {
     info: {
         inline: true,
         header: false,
@@ -37,5 +38,5 @@ addParameters({
             ~~~
         `
     }
-});
-storiesOf('Toast', module).add('Toast 提示', toast);
+};
+storiesOf('Toast', module).add('Toast 提示', toast, params);

@@ -14,7 +14,12 @@ export const FixedButtonContainer: FC<FixedButtonContainerProps> = props => {
     const { position, children, className } = props;
     const cls = classNames(prefixCls, className);
     return (
-        <div className={cls} style={{ position }}>
+        <div
+            className={cls}
+            style={{ position }}
+            data-testid='fixedContainer'
+            data-position={position}
+        >
             {children}
         </div>
     );

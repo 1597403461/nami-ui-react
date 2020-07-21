@@ -7,7 +7,7 @@ import React, {
     HTMLAttributes
 } from 'react';
 import classNames from 'classnames';
-import Checkbox from '../checkbox';
+import Checkbox, { checkboxProps } from '../checkbox';
 
 const prefixCls = 'nami-agreement';
 
@@ -20,11 +20,21 @@ export interface baseProps {
     className?: string;
     /** 点击单选框触发函数，参数为单选框此时状态值 */
     onChange?: <T>(checked: T) => void;
+    /** checkbox 的剩余参数 */
+    chexkboxProps?: checkboxProps;
 }
 export type agreementProps = baseProps & HTMLAttributes<HTMLElement>;
 
 export const Agreement: FC<agreementProps> = props => {
-    const { onChange, className, checked, agreeText, children, ...otherProps } = props;
+    const {
+        onChange,
+        className,
+        checked,
+        agreeText,
+        children,
+        chexkboxProps,
+        ...otherProps
+    } = props;
 
     const agreementCls = classNames(prefixCls, className);
 
@@ -36,7 +46,7 @@ export const Agreement: FC<agreementProps> = props => {
 
     return (
         <div className={agreementCls} {...otherProps}>
-            <Checkbox checked={checked} onChange={onChange}>
+            <Checkbox checked={checked} onChange={onChange} {...chexkboxProps}>
                 {agreeText}
             </Checkbox>
             <span className={`${prefixCls}-item`}>{renderItem()}</span>

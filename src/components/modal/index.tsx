@@ -134,7 +134,7 @@ export const Modal: FC<modalProps> = props => {
         );
 
         return (
-            <div className={modalCls}>
+            <div className={modalCls} data-testid='modal-main'>
                 {renderTitle()}
                 <div className={`${prefixCls}-body`}> {children}</div>
                 {renderFoooter()}

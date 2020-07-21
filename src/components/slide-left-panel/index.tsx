@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, FC } from 'react';
+import React, { Fragment, useEffect, FC, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import BodyScroll from '@bairong/body-scroll';
@@ -17,6 +17,7 @@ export interface slideleftPanelProps {
     visible?: boolean;
     maskClosable?: boolean;
     onClose?: () => void;
+    children?: ReactNode;
 }
 const SlideleftPanel: FC<slideleftPanelProps> = props => {
     const { visible, children, onClose, maskClosable } = props;

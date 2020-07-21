@@ -1,39 +1,83 @@
 @import "normalize.less";
 
-* {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, a, del, dfn, em, img, small, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary {
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; //屏蔽 长按选择
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html,body {
+    height: 100%;
 }
 
 body {
+    font: 16px/1.2 'PingFang SC', 'HanHei SC','Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
+    color: #333;
+    -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: PingFangSC-Regular,Arial, sans-serif;;
+    text-rendering: optimizeLegibility;
 }
 
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    margin: 0;
-    padding: 0;
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
 }
 
-button, input, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+ul, ol, li {
+    list-style-type: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    display: inline-block;
+    -webkit-touch-callout: none;
 }
 
 a {
-    background: transparent;
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input, textarea, button {
+    padding: 0;
     outline: none;
-    cursor: pointer;
+    border-radius: 0;
+    border: none;
+}
 
-    &:active,
-    &:hover {
-        outline: 0;
-        text-decoration: none;
-    }
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #c6c6c6;
+}
 
-    &[disabled] {
-        color: #ccc;
-        pointer-events: none;
-    }
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden
 }

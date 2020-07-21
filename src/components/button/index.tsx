@@ -56,7 +56,6 @@ export const Button: FC<ButtonProps> = props => {
 
     return (
         <button
-            test-data='button'
             className={buttonCls}
             disabled={disabled || loading}
             onClick={handeClick}

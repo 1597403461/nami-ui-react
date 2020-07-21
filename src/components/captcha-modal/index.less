@@ -1,0 +1,47 @@
+@import '../../styles/_variables.less';
+
+@captcha-modal-prefix-cls: ~"@{css-prefix}captcha-modal";
+
+.@{captcha-modal-prefix-cls} {
+    &-phone {
+        font-size: 44 / @rem;
+        color: #727272;
+        line-height: 1;
+        font-family: Manrope-Semibold;
+        margin-top: 14 / @rem;
+    }
+    &-input {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        padding-top: 30 / @rem;
+        padding-bottom: 24 / @rem;
+        border-bottom: 1px solid #f8f8f8;
+
+        input {
+            caret-color: @primary-color;
+            font-size: 28 / @rem;
+            color: #2d2d2d;
+            width: 8em;
+        }
+        button {
+            font-weight: bold;
+            font-size: 24 / @rem;
+            line-height: 1;
+            color: @primary-color;
+            background-color: transparent;
+            &:disabled {
+                color: #afafaf;
+            }
+        }
+    }
+    &-tips {
+        margin-top: 24/@rem;
+        font-size: 24/@rem;
+        line-height: 1;
+        font-weight: bold;
+        text-align: left;
+        color: @primary-color;
+    }
+}

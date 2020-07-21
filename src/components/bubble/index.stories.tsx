@@ -11,5 +11,11 @@ const bubble = () => (
         <Bubble onClick={action('bubble click')}>i am bubble</Bubble>
     </>
 );
-
-storiesOf('Bubble', module).add('Bubble 浮标展示', bubble);
+storiesOf('Bubble', module).add('Bubble 浮标展示', bubble, {
+    info: {
+        inline: true,
+        header: false,
+        source: true,
+        propTablesExclude: [Button]
+    }
+});

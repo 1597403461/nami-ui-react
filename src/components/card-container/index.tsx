@@ -6,10 +6,11 @@ const prefixCls = 'nami-card-container';
 export type colorProps = 'white' | 'gray';
 
 export interface cardProps {
+    /** 渐变色 */
     gradientColor?: colorProps;
 }
 
-const CardContainer: FC<cardProps & HTMLAttributes<HTMLElement>> = props => {
+export const CardContainer: FC<cardProps & HTMLAttributes<HTMLElement>> = props => {
     const { children, className, gradientColor, ...otherProps } = props;
     const cardContainerCls = classNames(prefixCls, className, `${prefixCls}-${gradientColor}`);
     return (

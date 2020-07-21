@@ -25,3 +25,5 @@ export { default as FixedButtonContainer } from './components/fixed-button-conta
 export { default as Bubble } from './components/bubble';
 
 export { default as CardContainer } from './components/card-container';
+
+export { default as CaptchaModal } from './components/card-container';

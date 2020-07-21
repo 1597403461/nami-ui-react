@@ -10,7 +10,7 @@ export interface emptyProps {
 }
 
 export const Empty: FC<emptyProps> = ({ imgUrl, message }) => (
-    <div className={prefixCls}>
+    <div className={prefixCls} data-testid='empty'>
         <img className={`${prefixCls}-image`} src={imgUrl} alt='' />
         <p className={`${prefixCls}-message`}>{message}</p>
     </div>

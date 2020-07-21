@@ -52,7 +52,7 @@ export const Alert: FC<alterProps> = props => {
         const types = {
             closeable: (
                 <span className={`${prefixCls}-icon`} onClick={handleClose}>
-                    <Icon type='&#xe69a;' />
+                    <Icon type='&#xe69b;' />
                 </span>
             ),
             link: (
