@@ -1,38 +1,17 @@
-import React, { CSSProperties } from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from 'react';
+import { Story } from '@storybook/react/types-6-0';
+import Alert, { alterProps } from './index';
 
-import Alert from './index';
-
-const style: CSSProperties = {
-    width: '100%'
+export default {
+    title: 'Component/Alert',
+    component: Alert
 };
-const alert = () => (
-    <div style={style}>
-        <Alert message='welcome to alert component' shape='circle' onClick={action('btn click')} />
-        <br />
-        <Alert message='welcome to alert component' onClick={action('btn click')} />
-        <br />
-        <Alert
-            message='welcome to button alert component'
-            type='button'
-            onClick={action('btn click')}
-        />
-        <br />
-        <Alert
-            message='welcome to link alert component'
-            linkText='linkText'
-            type='link'
-            onClick={action('btn click')}
-        />
-        <br />
-        <Alert
-            message='please click the icon 👉👉👉'
-            type='closeable'
-            onClick={action('btn click')}
-            onClose={action('icon click')}
-        />
-    </div>
-);
 
-storiesOf('Alert', module).add('不同样式的 Alert', alert);
+const Template: Story<alterProps> = args => <Alert {...args} />;
+
+export const Base = Template.bind({});
+
+Base.args = {
+    message: 'please click the icon 👉👉👉',
+    linkText: 'go go go'
+};

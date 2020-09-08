@@ -1,21 +1,16 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react/types-6-0';
+import Bubble, { bubbleProps } from './index';
 
-import Bubble from './index';
-import Button from '../button';
+export default {
+    title: 'Component/Bubble',
+    component: Bubble
+};
 
-const bubble = () => (
-    <>
-        <Button children='primary button' btnType='primary' size='small' />
-        <Bubble onClick={action('bubble click')}>i am bubble</Bubble>
-    </>
-);
-storiesOf('Bubble', module).add('Bubble 浮标展示', bubble, {
-    info: {
-        inline: true,
-        header: false,
-        source: true,
-        propTablesExclude: [Button]
-    }
-});
+const Template: Story<bubbleProps> = args => <Bubble {...args} />;
+
+export const Base = Template.bind({});
+
+Base.args = {
+    children: 'bubble'
+};

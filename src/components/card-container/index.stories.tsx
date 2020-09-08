@@ -1,10 +1,12 @@
-import React, { CSSProperties } from 'react';
-import { storiesOf } from '@storybook/react';
+import React from 'react';
+import { Story } from '@storybook/react/types-6-0';
+import CardContainer, { cardProps } from './index';
 
-import CardContainer from './index';
+export default {
+    title: 'Component/CardContainer',
+    component: CardContainer
+};
 
-const style: CSSProperties = { height: '160px' };
+const Template: Story<cardProps> = args => <CardContainer {...args} />;
 
-const cardContainer = () => <CardContainer style={style} />;
-
-storiesOf('cardContainer', module).add('cardContainer 面板展示', cardContainer);
+export const Base = Template.bind({});

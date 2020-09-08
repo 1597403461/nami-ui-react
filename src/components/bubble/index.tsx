@@ -9,6 +9,7 @@ export interface bubbleProps {
     /** bubble方向 */
     direction?: bubbleDirection;
     className?: string;
+    children?: any;
 }
 
 export const Bubble: FC<bubbleProps & HTMLAttributes<HTMLElement>> = props => {

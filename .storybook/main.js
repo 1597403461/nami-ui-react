@@ -1,6 +1,13 @@
 module.exports = {
-    stories: ['../stories/*.stories.tsx', '../src/components/**/*.stories.tsx'],
-    addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+    "stories": [
+        "../src/**/*.stories.mdx",
+        "../src/**/*.stories.@(js|jsx|ts|tsx)",
+        "../src/components/**/*.stories.tsx"
+    ],
+    "addons": [
+        "@storybook/addon-links",
+        "@storybook/addon-essentials"
+    ],
     webpackFinal: async config => {
         config.module.rules.push(
             {
@@ -38,4 +45,4 @@ module.exports = {
         config.resolve.extensions.push('.ts', '.tsx');
         return config;
     },
-};
+}

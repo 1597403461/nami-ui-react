@@ -1,21 +1,35 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-
-import FixedButtonContainer from './index';
+import FixedButtonContainer, { FixedButtonContainerProps } from './index';
 import Button from '../button';
 
-const fixed = () => (
+// const fixed = () => (
+//     <FixedButtonContainer>
+//         <Button block type='primary' onClick={action('btn click')} >提交</Button>
+//     </FixedButtonContainer>
+// );
+
+// storiesOf('FixedButtonContainer', module).add('底部固定 button', fixed, {
+//     info: {
+//         inline: false,
+//         header: true,
+//         source: true,
+//         propTablesExclude: [Button]
+//     }
+// });
+
+export default {
+    title: 'Component/FixedButtonContainer',
+    component: FixedButtonContainer
+};
+
+const Template: Story<FixedButtonContainerProps> = () => (
     <FixedButtonContainer>
-        <Button block children='提交' btnType='primary' onClick={action('btn click')} />
+        <Button block btnType='primary' onClick={action('btn click')}>
+            提交
+        </Button>
     </FixedButtonContainer>
 );
 
-storiesOf('FixedButtonContainer', module).add('底部固定 button', fixed, {
-    info: {
-        inline: false,
-        header: false,
-        source: true,
-        propTablesExclude: [Button]
-    }
-});
+export const Base = Template.bind({});

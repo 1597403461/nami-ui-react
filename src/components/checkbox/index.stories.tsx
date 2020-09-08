@@ -1,11 +1,15 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
+import { Story } from '@storybook/react/types-6-0';
 
-import Checkbox from './index';
+import Checkbox, { checkboxProps } from './index';
 
-const checkbox = () => {
-    const [checked, setChecked] = useState<boolean>(false);
+export default {
+    title: 'Component/Checkbox',
+    component: Checkbox
+};
+
+const Template: Story<checkboxProps> = () => {
+    const [checked, setChecked] = useState(false);
     const handleOnChange = (checked: any) => {
         setChecked(() => checked);
     };
@@ -16,4 +20,8 @@ const checkbox = () => {
     );
 };
 
-storiesOf('checkbox', module).add('checkbox 展示', checkbox);
+export const Base = Template.bind({});
+
+Base.parameters = {
+    controls: { hideNoControlsWarning: true }
+};

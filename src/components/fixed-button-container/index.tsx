@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { PositionProperty } from 'csstype';
+import { Position } from 'csstype';
 import classNames from 'classnames';
 const prefixCls = 'nami-fixed-button-container';
 
 export interface FixedButtonContainerProps {
     /** 定位方式 */
-    position?: PositionProperty;
+    position?: Position;
     /** 类名 */
     className?: string;
 }

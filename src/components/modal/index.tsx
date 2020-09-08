@@ -41,6 +41,8 @@ export interface modalProps {
     onOk?: () => any;
     /** 标题 */
     title?: ReactNode;
+    /** children */
+    children: any;
 }
 
 export const Modal: FC<modalProps> = props => {

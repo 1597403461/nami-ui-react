@@ -1,11 +1,16 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, Fragment, useRef } from 'react';
-import { storiesOf } from '@storybook/react';
+import { Story } from '@storybook/react/types-6-0';
 import { actions } from '@storybook/addon-actions';
 
-import CaptchaModal from './index';
+import CaptchaModal, { captchaModalProps } from './index';
 import Button from '../button/index';
-const captchaModal = () => {
+
+export default {
+    title: 'Component/CaptchaModal',
+    component: CaptchaModal
+};
+
+const Template: Story<captchaModalProps> = () => {
     const captchaModal = useRef<any>();
     const eventsFromObject = actions({
         onChange: 'change input',
@@ -48,11 +53,8 @@ const captchaModal = () => {
     );
 };
 
-storiesOf('captcha', module).add('验证码弹框 captcha', captchaModal, {
-    info: {
-        inline: true,
-        header: false,
-        source: true,
-        propTablesExclude: [Button]
-    }
-});
+export const Base = Template.bind({});
+
+Base.parameters = {
+    controls: { hideNoControlsWarning: true }
+};

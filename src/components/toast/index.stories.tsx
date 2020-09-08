@@ -1,11 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import Toast from './index';
-
 import Button from '../button';
 
-const toast = () => {
+export default {
+    title: 'Component/Toast',
+    component: Toast
+};
+
+const Template = () => {
     const onClick = () => {
         Toast('hello world');
     };
@@ -16,27 +19,6 @@ const toast = () => {
     );
 };
 
-const params = {
-    info: {
-        inline: true,
-        header: false,
-        source: false,
-        propTablesExclude: [Button],
-        text: `
-            ~~~js
-            // 使用方法
-            const App = () => {
-                const onClick = () => {
-                    Toast('hello world');
-                };
-                return (
-                    <Button btnType='primary' onClick={onClick}>
-                        please click me
-                    </Button>
-                );
-            };
-            ~~~
-        `
-    }
+Template.parameters = {
+    controls: { hideNoControlsWarning: true }
 };
-storiesOf('Toast', module).add('Toast 提示', toast, params);
